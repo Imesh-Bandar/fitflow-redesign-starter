@@ -1,0 +1,40 @@
+# ---- Flutter / Dart (frontend/) ----
+**/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+*.iml
+*.g.dart
+
+# ---- Node / NestJS (backend/) ----
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# ---- Python / FastAPI (ai-service/) ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# ---- Environment & secrets ----
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# ---- OS / Editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
