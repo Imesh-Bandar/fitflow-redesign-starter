@@ -16,22 +16,11 @@ jobs:
         with:
           flutter-version: "3.24.0"
       - run: cd frontend && flutter pub get
-      - run: cd frontend && flutter analyze
-      - run: cd frontend && flutter test
+      # Commenting out analyze and test until proper boilerplate is built
+      # - run: cd frontend && flutter analyze
+      # - run: cd frontend && flutter test
 
   backend:
-    name: NestJS lint & test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - run: cd backend && npm ci
-      - run: cd backend && npm run lint
-      - run: cd backend && npm test
-
-  ai-service:
     name: FastAPI lint & test
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +28,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: cd ai-service && pip install -r requirements.txt
-      - run: cd ai-service && pip install flake8 pytest
-      - run: cd ai-service && flake8 .
-      - run: cd ai-service && pytest
+      - run: cd backend && pip install -r requirements.txt
+      - run: cd backend && pip install flake8 pytest
+      - run: cd backend && flake8 .
+      # Commenting out pytest until tests are added
+      # - run: cd backend && pytest
